@@ -7,7 +7,7 @@
 
   --primaryColor: black;
   --secondaryColor: yellow;
-  --borderColor: #ccc;
+  --borderColor: rgba(192, 192, 67, 0.877);
 }
 
 h1,
@@ -120,6 +120,7 @@ section {
   background-color: var(--primaryColor);
   border-radius: 10px;
   overflow: hidden;
+  box-shadow: 5px 5px 5px var(--borderColor);
 }
 
 .column > img {
