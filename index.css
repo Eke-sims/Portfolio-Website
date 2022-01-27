@@ -1,41 +1,53 @@
+:root {
+  --mainColor: black;
+  --secondaryColor: yellow;
+
+  --borderColor: #c1c1c1;
+
+  --mainText: black;
+  --secondaryText: #4b5156;
+}
+
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
-  color: var(--primaryColor);
   font-family: Arial, Helvetica, sans-serif;
-
-  --primaryColor: black;
-  --secondaryColor: yellow;
-  --borderColor: rgba(192, 192, 67, 0.877);
 }
 
-h1,
-h2,
-h3,
-h4,
-h6 {
-  color: var(--secondaryColor);
+p,
+li,
+span,
+label,
+input,
+textarea {
+  color: var(--secondarytext);
 }
 
 h1 {
   font-size: 56px;
+  color: var(--maintext);
+  font-weight: 1000;
 }
 h2 {
-  font-size: 48px;
+  font-size: 42px;
+  color: var(--maintext);
+  font-weight: 500px;
 }
 h3 {
-  color: var(--primaryColor);
-  font-size: 42px;
+  color: var(--maintext);
+  font-size: 28px;
 }
 h4 {
-  font-size: 30px;
+  font-size: 24px;
+  color: var(--maintext);
 }
 h5 {
-  font-size: 26px;
+  font-size: 20px;
+  color: var(--maintext);
 }
 h6 {
-  font-size: 26px;
+  font-size: 16px;
+  color: var(--maintext);
 }
 
 a {
@@ -43,117 +55,115 @@ a {
   color: var(--secondaryColor);
 }
 
-p {
-  color: white;
-}
-
-section {
-  padding: 1em 100px;
-}
-
-.nav {
-  height: 40px;
-  display: flex;
-  background-color: var(--primaryColor);
-  color: var(--secondaryColor);
-  align-items: center;
-  justify-content: space-between;
-}
-
-.links-container > a {
-  padding: 4px;
-  margin-right: 20px;
-}
-
 .links-container > a:hover {
   color: #fff;
 }
 
-.s2 {
-  border-bottom: 1px solid var(--primaryColor);
-  background-color: var(--secondaryColor);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1em;
-  grid-template-rows: 5em 15em;
-  grid-template-areas:
-    "header header"
-    "left-card right-card";
+.s1 {
+  background-color: var(--mainColor);
+  overflow: auto;
 }
 
-.heading {
-  grid-area: header;
-  padding: 10px;
+.s2 {
+  background-color: var(--secondaryColor);
+  overflow: auto;
+}
+
+.main-container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+#nav-bar {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
-.card {
-  padding: 4px;
-  margin: 10px;
+.links-container {
+  font-size: 24px;
+}
+
+#introduction-section {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "heading heading" "left-card right-card";
+  gap: 1em;
 }
 
 .left-card {
   grid-area: left-card;
+}
+
+.right-card {
+  grid-area: right-card;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
 }
 
 .left-card > img {
-  margin: 2px auto;
+  display: block;
+  margin: 10px auto;
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  border: 4px solid var(--primaryColor);
-  box-shadow: 5px 5px 5px var(--borderColor);
+  object-fit: cover;
+  border: 4px solid var(--mainText);
 }
+
 .name {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  color: var(--primaryColor);
+  justify-content: center;
 }
 
-.name > p {
-  color: var(--primaryColor);
+#preview {
+  height: auto;
+  width: 300px;
+  padding: 1em;
+  border: 1.5px solid black;
 }
 
-.card > p {
-  color: var(--primaryColor);
+#blog-section {
   margin-top: 2em;
-}
-
-.right-card {
-  border: 2px solid var(--primaryColor);
-  grid-area: right-card;
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-}
-
-.s3 {
-  background-color: var(--secondaryColor);
+  margin-bottom: 2em;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 3em 40em;
+  grid-template-areas: "heading heading heading" "left-column center-column right-column";
   gap: 1em;
-  grid-template-areas:
-    "header header header"
-    "left-column center-column right-column";
+}
+
+#blog-section h2 {
+  color: var(--secondaryColor);
+}
+
+.heading {
+  padding: 2px;
+  grid-area: heading;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.details {
+  padding: 1em;
+  align-items: center;
 }
 
 .column {
-  background-color: var(--primaryColor);
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 5px 5px 5px var(--borderColor);
+  cursor: pointer;
+  background-color: var(--secondaryColor);
 }
 
-.column > img {
-  width: 100%;
+.column:hover {
+  box-shadow: 5px 5px 5px gray;
 }
 
 .left-column {
@@ -168,28 +178,32 @@ section {
   grid-area: right-column;
 }
 
+.column > img {
+  width: 100%;
+}
+
 button {
   margin-top: 2em;
-  background-color: var(--primaryColor);
+  background-color: transparent;
   border-radius: 50px;
   padding: 4px 10px;
-  border: 1px solid var(--secondaryColor);
+  border: 1px solid var(--mainText);
 }
 
-.details {
-  padding: 1em;
-  align-items: center;
+button a {
+  color: var(--mainText);
 }
 
-.s4 {
-  background-color: var(--primaryColor);
+#qoute-section {
+  margin-top: 2em;
+  margin-bottom: 2em;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
 
-.s5 {
+#socials-container {
   background: repeating-linear-gradient(
     35deg,
     yellow 0px,
@@ -198,15 +212,60 @@ button {
     black 80px
   );
   height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.footer {
-  background-color: var(--primaryColor);
+.warning {
+  height: 200px;
+  width: 500px;
+  background-color: yellow;
+  border: 4px solid black;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.footer > p {
-  color: var(--secondaryColor);
+.footer {
+  background-color: var(--secondaryColor);
+}
+
+#footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+}
+
+@media screen and (max-width: 1200px) {
+  .main-container {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #introduction-section {
+    grid-template-columns: 1fr;
+    grid-template-rows: 2em 20em;
+    grid-template-areas:
+      "heading"
+      "left-card"
+      "right-card";
+  }
+
+  #introduction-section h2 {
+    font-size: 34px;
+  }
+
+  #nav-bar h2 {
+    font-size: 30px;
+    font-weight: 200;
+  }
+
+  #blog-section {
+    grid-template-columns: 1fr;
+    grid-template-areas: "heading" "left-column" "center-column" "right-column";
+  }
 }
